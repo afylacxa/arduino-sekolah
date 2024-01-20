@@ -1,0 +1,35 @@
+int int_cahaya = A2; // ini sensor cahaya kaki s
+int buzzer = 3; // ini speaker ke D berapa positifnya
+
+void setup(){
+  pinMode(int_cahaya,INPUT);
+  pinMode(buzzer,OUTPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  int cahaya = analogRead(int_cahaya);
+  Serial.println(cahaya);
+  if(cahaya > 100){
+    for(;;){
+      Serial.println("ada maling");
+      digitalWrite(buzzer,HIGH);
+      delay(100)
+      digitalWrite(buzzer,LOW);
+      delay(100)
+    }
+  }
+}
+
+// outher options ==============================================================================
+void loop(){
+  int cahaya = analogRead(int_cahaya);
+  Serial.println(cahaya);
+  if(cahaya > 100){
+    digitalWrite(buzzer,HIGH);
+    delay(100)
+    digitalWrite(buzzer,LOW);
+    delay(100)
+  }else{
+    digitalWrite(buzzer,LOW);
+  }
+}
