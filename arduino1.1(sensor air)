@@ -1,0 +1,21 @@
+int int_air = A3; // ini tergantung kaki ny di analog berapa
+int buzzer = 2; // ini tergantung kakinya di digital berapa
+
+void setup(){
+  pinMode(int_air,INPUT);
+  pinMode(buzzer,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop(){
+  int air = analogRead(int_air);
+  Serial.println(air);
+  if(air > 150){
+    digitalWrite(buzzer,HIGH);
+    delay(100);
+    digitalWrite(buzzer,LOW);
+    delay(200);
+  }else{
+  digitalWrite(buzzer,LOW);
+  }
+}
