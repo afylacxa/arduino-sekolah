@@ -13,9 +13,9 @@ void loop(){
     for(;;){
       Serial.println("ada maling");
       digitalWrite(buzzer,HIGH);
-      delay(100)
+      delay(100);
       digitalWrite(buzzer,LOW);
-      delay(100)
+      delay(100);
     }
   }
 }
@@ -26,9 +26,9 @@ void loop(){
   Serial.println(cahaya);
   if(cahaya > 100){
     digitalWrite(buzzer,HIGH);
-    delay(100)
+    delay(100);
     digitalWrite(buzzer,LOW);
-    delay(100)
+    delay(100);
   }else{
     digitalWrite(buzzer,LOW);
   }
