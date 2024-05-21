@@ -1,0 +1,39 @@
+#include <LiquidCrystal.h>
+#include <keypad.h>
+
+const int ROW_NUM = 4;
+const  int COL_NUM = 3;
+
+char keys[ROW_NUM][COL_NUM] = {
+  {'1', '2', '3',},
+  {'4', '5', '6',},
+  {'7', '8', '9',},
+  {'*', '0', '#',},
+};
+
+byte pin_rows[ROW_NUM] = {7,6,1,0};
+byte pin_column[COL_NUM] = {8,9,10};
+
+Keypad keypad = Keypad(makeKeymap(keys),pin_rows, pin_column, ROW_NUM, COL_NUM);
+
+String key=String(keypad.waitForKey());
+lcd.print(key);
+
+#include <keypad.h>
+
+const int row = 4;
+const int col = 3;
+
+char keys[row][col] = {
+    {'1', '2', '3',},
+    {'4', '5', '6',},
+    {'7', '8', '9',},
+    {'*', '0', '#',},
+};
+
+byte port_row[row] = {1,2,3,4};
+byte port_col[col] = {5,6,7,8};
+
+keypad keypad = keypad(makeKeyMaps(keys)port_row,port_col,row,col);
+
+char key = char(keypad.waitForKeys());
